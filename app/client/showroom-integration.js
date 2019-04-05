@@ -1,11 +1,7 @@
 class Showroom {
 
   constructor () {
-    window.showroomReady = window.showroomReady || new Promise((resolve) => {
-      requestAnimationFrame( () => {
-        window.showroomReady.resolve = resolve;
-      });
-    });
+    window.showroomReady = window.showroomReady || new Promise((resolve) => requestAnimationFrame(resolve));
     this.inject();
     this.ready = window.showroomReady;
   }
@@ -106,7 +102,7 @@ class Showroom {
     window.addEventListener(eventName, callback);
     return () => window.removeEventListener(eventName, callback);
   }
-  
+
 
 }
 
