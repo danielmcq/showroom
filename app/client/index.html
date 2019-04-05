@@ -53,7 +53,7 @@
           return e;
         });
       }
-      
+
       if (scripts) {
         for (let path of scripts) {
           const script = document.createElement('script');
@@ -64,7 +64,7 @@
       }
     })()
       .then(() => app.loadComponents())
-      .then(() => window.showroomReady.resolve())
+      .then(() => window.showroomReady)
       .catch(err => setTimeout(() => {
         app.descriptionView.setContent(createError(err));
       }, 150));
